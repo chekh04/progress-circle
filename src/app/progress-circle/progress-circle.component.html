@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="wrapper__content">
+    <ng-content></ng-content>
+  </div>
+  <svg #circle
+       [style.transform]="'rotate(' + rotatePerAngle + 'deg)'"
+       width="191"
+       height="191"
+       viewBox="0 0 191 191">
+    <circle
+      [attr.r]="radius"
+      cx="95.5"
+      cy="95.5"
+      [style.stroke]="progressInnerColor"
+      fill="none"
+      stroke-width="18px"
+      stroke-opacity="0.1"></circle>
+    <circle
+      id="circle"
+      cx="95.5"
+      cy="95.5"
+      [attr.r]="radius"
+      [style.stroke]="progressColor"
+      [attr.stroke-dashoffset]="getStrokeOffset()"
+      [attr.stroke-dasharray]="circleLength">
+    </circle>
+  </svg>
+</div>
